@@ -1,0 +1,41 @@
+<html>
+
+<style>
+    .hidden {
+        display: none;
+    }
+    
+    .busy *, .busy {
+        opacity: 0.25;
+        animation: opacity 200ms ease-out;
+        pointer-events: none;
+    }
+</style>
+<body>
+
+<script>
+    function clickButton() {
+        var res = document.getElementById("test");
+        res.className = ""
+    }
+
+    const randomNumber = Math.floor(Math.random() * 150);
+    console.log(randomNumber);
+    
+    setTimeout(() => {
+        var container = document.getElementById("container");
+        container.classList.add("busy")
+        console.log("added-busy")
+    }, randomNumber)
+    
+</script>
+
+<div id="container">
+    <button id="btn" onclick="clickButton()">CLICK HERE</button>
+    <div id="test" class="hidden">
+        <pre>IF THIS IS VISIBLE ITS A NO BUG</pre>
+    </div>
+</div>
+
+</body>
+</html>
